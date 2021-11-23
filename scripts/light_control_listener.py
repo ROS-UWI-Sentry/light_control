@@ -94,6 +94,8 @@ def listener():
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
+    #to clean up the handling of the pin
+    GPIO.cleanup()
 
 if __name__ == '__main__':
 
