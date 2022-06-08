@@ -58,7 +58,7 @@ output_pin = 32  # BOARD pin 32
 def callback(data):
     global curr_value
 
-    rospy.loginfo(rospy.get_caller_id() + 'Node heard: %s', data.data)
+    rospy.loginfo(rospy.get_caller_id() + ' I heard: %s', data.data)
     if data.data == True:
         #set the output pin true if the message received is true
         curr_value= GPIO.HIGH
@@ -76,7 +76,7 @@ def listener():
     # set pin as an output pin with optional initial state of LOW:
     GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.LOW)
 
-    print("Starting demo now! Press CTRL+C to exit")
+    print("Light control started")
     curr_value = GPIO.LOW
 
 
